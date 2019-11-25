@@ -14,9 +14,6 @@ def video_url_creator(id_lst):
         videos.append(video)
     return videos
 
-# OUR MOCK ARRAY OF PROJECTS
-
-
 @app.route('/')
 def playlists_index():
     """Show all playlists."""
