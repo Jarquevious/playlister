@@ -4,7 +4,7 @@ from bson.objectid import ObjectId
 
 import os
 host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/Playlister')
-client = MongoClient(host=f'{host}?retryWrites=false')
+client = MongoClient(host=host)
 db = client.get_default_database()
 playlists = db.playlists
 
@@ -21,7 +21,7 @@ def video_url_creator(id_lst):
 @app.route('/')
 def playlists_index():
     """Show all playlists."""
-    return render_template('playlists_index.html', playlists=playlists.find())
+    return render_template('home.html', playlists=playlists.find())
 
 @app.route('/playlists/new')
 def playlists_new():
