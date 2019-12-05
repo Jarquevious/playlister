@@ -21,11 +21,17 @@ def video_url_creator(id_lst):
 @app.route('/')
 def playlists_index():
     """Show all playlists."""
-    return render_template('home.html', playlists=playlists.find())
+    return render_template('playlists_index.html', playlists=playlists.find())
 
 @app.route('/playlists/new')
 def playlists_new():
     """Create a new playlist."""
+    playlist = {
+        'title': "",
+        'description': "",
+        'videos': "",
+        'video_ids':""
+    }
     return render_template('playlists_new.html', playlist={})
 
 @app.route('/playlists', methods=['POST'])
