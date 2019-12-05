@@ -32,7 +32,7 @@ def playlists_new():
         'videos': "",
         'video_ids':""
     }
-    return render_template('playlists_new.html', playlist={})
+    return render_template('playlists_new.html', playlist=playlist)
 
 @app.route('/playlists', methods=['POST'])
 def playlists_submit():
